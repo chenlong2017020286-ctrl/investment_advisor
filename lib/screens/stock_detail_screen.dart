@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/stock.dart';
+import '../models/portfolio.dart';
 import '../providers/market_provider.dart';
 import '../providers/portfolio_provider.dart';
 import '../widgets/k_line_chart.dart';
