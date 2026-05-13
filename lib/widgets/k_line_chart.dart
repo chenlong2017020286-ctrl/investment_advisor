@@ -313,7 +313,7 @@ class PriceLineChart extends StatelessWidget {
       child: LineChart(
         LineChartData(
           gridData: const FlGridData(show: false),
-          titlesData: const FlTitlesData(showTitles: false),
+          titlesData: const FlTitlesData(show: false),
           borderData: FlBorderData(show: false),
           minX: 0,
           maxX: (prices.length - 1).toDouble(),
