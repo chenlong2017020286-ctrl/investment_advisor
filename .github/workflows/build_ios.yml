@@ -1,4 +1,4 @@
-name: Build iOS IPA
+﻿name: Build iOS IPA
 
 on:
   push:
@@ -18,8 +18,17 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
 
-      - name: Create iOS project
-        run: flutter create --platforms=ios .
+      - name: Backup source and recreate with iOS
+        run: |
+          mkdir -p /tmp/backup
+          cp -r lib /tmp/backup/
+          cp pubspec.yaml /tmp/backup/
+          cd ..
+          rm -rf investment_advisor
+          flutter create --project-name investment_advisor --org com.investor investment_advisor
+          cd investment_advisor
+          cp -r /tmp/backup/lib .
+          cp /tmp/backup/pubspec.yaml .
 
       - name: Get dependencies
         run: flutter pub get
