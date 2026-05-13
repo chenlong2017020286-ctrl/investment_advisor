@@ -144,7 +144,13 @@ class _TradeScreenState extends State<TradeScreen> {
               const Spacer(),
 
               // 费用明细
-              _buildFeeCard(estimatedAmount, fee, stampDuty, totalAmount, isBuy),
+              _buildFeeCard(
+                estimatedAmount.toDouble(),
+                fee.toDouble(),
+                stampDuty.toDouble(),
+                totalAmount.toDouble(),
+                isBuy,
+              ),
 
               const SizedBox(height: 16),
 
